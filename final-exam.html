@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <title>Book catalogue</title>
+</head>
+
+<body style="font-family: 'Barlow', sans-serif;">
+    <div class="container">
+        <header>
+            <br>
+            <h1 class="title">My book catalogue</h1>
+            <br>
+        </header>
+        <table id="app" class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+            <thead>
+                <tr>
+                    <th @click="sortTable(title)">Title</th>
+                    <th>Author</th>
+                    <th>Published Date</th>
+                    <th>Amazon Link</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="book in books">
+                    <td>{{book.title}}</td>
+                    <td>{{book.author}}</td>
+                    <td>{{book.publishedDate}}</td>
+                    <td>{{book.url}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script>
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                name: 'Book Catalogue',
+                books: [{
+                        title: 'The Invisible Man',
+                        author: 'Ralph Ellison',
+                        publishedDate: 1970,
+                        url: 'https://www.amazon.com/Portrait-Artist-Young-Thrift-Editions/dp/0486280500',
+                    },
+                    {
+                        title: 'Leviathan',
+                        author: 'Thomas Hobbes',
+                        publishedDate: 1875,
+                        url: 'https://www.amazon.com/Portrait-Artist-Young-Thrift-Editions/dp/0486280500',
+                    },
+                    {
+                        title: 'Everything is Illuminated',
+                        author: 'Some Dude',
+                        publishedDate: 2008,
+                        url: 'https://www.amazon.com/Portrait-Artist-Young-Thrift-Editions/dp/0486280500',
+                    },
+                    {
+                        title: 'CONCH as a Young Man',
+                        author: 'James Joyce',
+                        publishedDate: 1916,
+                        url: 'https://www.amazon.com/Portrait-Artist-Young-Thrift-Editions/dp/0486280500',
+                    },
+                    {
+                        title: 'BABBAGE as a Young Man',
+                        author: 'James Joyce',
+                        publishedDate: 1916,
+                        url: 'https://www.amazon.com/Portrait-Artist-Young-Thrift-Editions/dp/0486280500',
+                    },
+                    {
+                        title: 'A Portrait of an Artist as a Young Man',
+                        author: 'James Joyce',
+                        publishedDate: 1916,
+                        url: 'https://www.amazon.com/Portrait-Artist-Young-Thrift-Editions/dp/0486280500',
+                    },
+                    {
+                        title: 'A Portrait of an Artist as a Young Man',
+                        author: 'James Joyce',
+                        publishedDate: 1916,
+                        url: 'https://www.amazon.com/Portrait-Artist-Young-Thrift-Editions/dp/0486280500',
+                    },
+                    {
+                        title: 'A Portrait of an Artist as a Young Man',
+                        author: 'James Joyce',
+                        publishedDate: 1916,
+                        url: 'https://www.amazon.com/Portrait-Artist-Young-Thrift-Editions/dp/0486280500',
+                    },
+                    {
+                        title: 'A Portrait of an Artist as a Young Man',
+                        author: 'James Joyce',
+                        publishedDate: 1916,
+                        url: 'https://www.amazon.com/Portrait-Artist-Young-Thrift-Editions/dp/0486280500',
+                    },
+                    {
+                        title: 'A Portrait of an Artist as a Young Man',
+                        author: 'James Joyce',
+                        publishedDate: 1916,
+                        url: 'https://www.amazon.com/Portrait-Artist-Young-Thrift-Editions/dp/0486280500',
+                    },
+                    {
+                        title: 'A Portrait of an Artist as a Young Man',
+                        author: 'James Joyce',
+                        publishedDate: 1916,
+                        url: 'https://www.amazon.com/Portrait-Artist-Young-Thrift-Editions/dp/0486280500',
+                    },
+                    {
+                        title: 'A Portrait of an Artist as a Young Man',
+                        author: 'James Joyce',
+                        publishedDate: 1916,
+                        url: 'https://www.amazon.com/Portrait-Artist-Young-Thrift-Editions/dp/0486280500',
+                    },
+                    {
+                        title: 'A Portrait of an Artist as a Young Man',
+                        author: 'James Joyce',
+                        publishedDate: 1916,
+                        url: 'https://www.amazon.com/Portrait-Artist-Young-Thrift-Editions/dp/0486280500',
+                    },
+                    {
+                        title: 'A Portrait of an Artist as a Young Man',
+                        author: 'James Joyce',
+                        publishedDate: 1916,
+                        url: 'https://www.amazon.com/Portrait-Artist-Young-Thrift-Editions/dp/0486280500',
+                    },
+                    {
+                        title: 'A Portrait of an Artist as a Young Man',
+                        author: 'James Joyce',
+                        publishedDate: 1916,
+                        url: 'https://www.amazon.com/Portrait-Artist-Young-Thrift-Editions/dp/0486280500',
+                    },
+                    {
+                        title: 'A Portrait of an Artist as a Young Man',
+                        author: 'James Joyce',
+                        publishedDate: 1916,
+                        url: 'https://www.amazon.com/Portrait-Artist-Young-Thrift-Editions/dp/0486280500',
+                    },
+                    {
+                        title: 'A Portrait of an Artist as a Young Man',
+                        author: 'James Joyce',
+                        publishedDate: 1916,
+                        url: 'https://www.amazon.com/Portrait-Artist-Young-Thrift-Editions/dp/0486280500',
+                    },
+                    {
+                        title: 'A Portrait of an Artist as a Young Man',
+                        author: 'James Joyce',
+                        publishedDate: 1916,
+                        url: 'https://www.amazon.com/Portrait-Artist-Young-Thrift-Editions/dp/0486280500',
+                    },
+                    {
+                        title: 'A Portrait of an Artist as a Young Man',
+                        author: 'James Joyce',
+                        publishedDate: 1916,
+                        url: 'https://www.amazon.com/Portrait-Artist-Young-Thrift-Editions/dp/0486280500',
+                    },
+                    {
+                        title: 'A Portrait of an Artist as a Young Man',
+                        author: 'James Joyce',
+                        publishedDate: 1916,
+                        url: 'https://www.amazon.com/Portrait-Artist-Young-Thrift-Editions/dp/0486280500',
+                    },
+                    {
+                        title: 'A Portrait of an Artist as a Young Man',
+                        author: 'James Joyce',
+                        publishedDate: 1916,
+                        url: 'https://www.amazon.com/Portrait-Artist-Young-Thrift-Editions/dp/0486280500',
+                    },
+                    {
+                        title: 'A Portrait of an Artist as a Young Man',
+                        author: 'James Joyce',
+                        publishedDate: 1916,
+                        url: 'https://www.amazon.com/Portrait-Artist-Young-Thrift-Editions/dp/0486280500',
+                    },
+                    {
+                        title: 'A Portrait of an Artist as a Young Man',
+                        author: 'James Joyce',
+                        publishedDate: 1916,
+                        url: 'https://www.amazon.com/Portrait-Artist-Young-Thrift-Editions/dp/0486280500',
+                    },
+                    {
+                        title: 'A Portrait of an Artist as a Young Man',
+                        author: 'James Joyce',
+                        publishedDate: 1916,
+                        url: 'https://www.amazon.com/Portrait-Artist-Young-Thrift-Editions/dp/0486280500',
+                    },
+                    {
+                        title: 'A Portrait of an Artist as a Young Man',
+                        author: 'James Joyce',
+                        publishedDate: 1916,
+                        url: 'https://www.amazon.com/Portrait-Artist-Young-Thrift-Editions/dp/0486280500',
+                    },
+                    {
+                        title: 'A Portrait of an Artist as a Young Man',
+                        author: 'James Joyce',
+                        publishedDate: 1916,
+                        url: 'https://www.amazon.com/Portrait-Artist-Young-Thrift-Editions/dp/0486280500',
+                    },
+                    {
+                        title: 'A Portrait of an Artist as a Young Man',
+                        author: 'James Joyce',
+                        publishedDate: 1916,
+                        url: 'https://www.amazon.com/Portrait-Artist-Young-Thrift-Editions/dp/0486280500',
+                    },
+                    {
+                        title: 'A Portrait of an Artist as a Young Man',
+                        author: 'James Joyce',
+                        publishedDate: 1916,
+                        url: 'https://www.amazon.com/Portrait-Artist-Young-Thrift-Editions/dp/0486280500',
+                    },
+                    {
+                        title: 'A Portrait of an Artist as a Young Man',
+                        author: 'James Joyce',
+                        publishedDate: 1916,
+                        url: 'https://www.amazon.com/Portrait-Artist-Young-Thrift-Editions/dp/0486280500',
+                    },
+                    {
+                        title: 'A Portrait of an Artist as a Young Man',
+                        author: 'James Joyce',
+                        publishedDate: 1916,
+                        url: 'https://www.amazon.com/Portrait-Artist-Young-Thrift-Editions/dp/0486280500',
+                    },
+                    {
+                        title: 'A Portrait of an Artist as a Young Man',
+                        author: 'James Joyce',
+                        publishedDate: 1916,
+                        url: 'https://www.amazon.com/Portrait-Artist-Young-Thrift-Editions/dp/0486280500',
+                    },
+                    {
+                        title: 'A Portrait of an Artist as a Young Man',
+                        author: 'James Joyce',
+                        publishedDate: 1916,
+                        url: 'https://www.amazon.com/Portrait-Artist-Young-Thrift-Editions/dp/0486280500',
+                    },
+                    {
+                        title: 'A Portrait of an Artist as a Young Man',
+                        author: 'James Joyce',
+                        publishedDate: 1916,
+                        url: 'https://www.amazon.com/Portrait-Artist-Young-Thrift-Editions/dp/0486280500',
+                    },
+                    {
+                        title: 'A Portrait of an Artist as a Young Man',
+                        author: 'James Joyce',
+                        publishedDate: 1916,
+                        url: 'https://www.amazon.com/Portrait-Artist-Young-Thrift-Editions/dp/0486280500',
+                    },
+                    {
+                        title: 'A Portrait of an Artist as a Young Man',
+                        author: 'James Joyce',
+                        publishedDate: 1916,
+                        url: 'https://www.amazon.com/Portrait-Artist-Young-Thrift-Editions/dp/0486280500',
+                    },
+                    {
+                        title: 'A Portrait of an Artist as a Young Man',
+                        author: 'James Joyce',
+                        publishedDate: 1916,
+                        url: 'https://www.amazon.com/Portrait-Artist-Young-Thrift-Editions/dp/0486280500',
+                    },
+                    {
+                        title: 'A Portrait of an Artist as a Young Man',
+                        author: 'James Joyce',
+                        publishedDate: 1916,
+                        url: 'https://www.amazon.com/Portrait-Artist-Young-Thrift-Editions/dp/0486280500',
+                    },
+                    {
+                        title: 'A Portrait of an Artist as a Young Man',
+                        author: 'James Joyce',
+                        publishedDate: 1916,
+                        url: 'https://www.amazon.com/Portrait-Artist-Young-Thrift-Editions/dp/0486280500',
+                    },
+                    {
+                        title: 'A Portrait of an Artist as a Young Man',
+                        author: 'James Joyce',
+                        publishedDate: 1916,
+                        url: 'https://www.amazon.com/Portrait-Artist-Young-Thrift-Editions/dp/0486280500',
+                    },
+                    {
+                        title: 'A Portrait of an Artist as a Young Man',
+                        author: 'James Joyce',
+                        publishedDate: 1916,
+                        url: 'https://www.amazon.com/Portrait-Artist-Young-Thrift-Editions/dp/0486280500',
+                    },
+                    {
+                        title: 'A Portrait of an Artist as a Young Man',
+                        author: 'James Joyce',
+                        publishedDate: 1916,
+                        url: 'https://www.amazon.com/Portrait-Artist-Young-Thrift-Editions/dp/0486280500',
+                    },
+                    {
+                        title: 'A Portrait of an Artist as a Young Man',
+                        author: 'James Joyce',
+                        publishedDate: 1916,
+                        url: 'https://www.amazon.com/Portrait-Artist-Young-Thrift-Editions/dp/0486280500',
+                    },
+                    {
+                        title: 'A Portrait of an Artist as a Young Man',
+                        author: 'James Joyce',
+                        publishedDate: 1916,
+                        url: 'https://www.amazon.com/Portrait-Artist-Young-Thrift-Editions/dp/0486280500',
+                    },
+                    {
+                        title: 'A Portrait of an Artist as a Young Man',
+                        author: 'James Joyce',
+                        publishedDate: 1916,
+                        url: 'https://www.amazon.com/Portrait-Artist-Young-Thrift-Editions/dp/0486280500',
+                    },
+                    {
+                        title: 'A Portrait of an Artist as a Young Man',
+                        author: 'James Joyce',
+                        publishedDate: 1916,
+                        url: 'https://www.amazon.com/Portrait-Artist-Young-Thrift-Editions/dp/0486280500',
+                    },
+                    {
+                        title: 'A Portrait of an Artist as a Young Man',
+                        author: 'James Joyce',
+                        publishedDate: 1916,
+                        url: 'https://www.amazon.com/Portrait-Artist-Young-Thrift-Editions/dp/0486280500',
+                    },
+                    {
+                        title: 'A Portrait of an Artist as a Young Man',
+                        author: 'James Joyce',
+                        publishedDate: 1916,
+                        url: 'https://www.amazon.com/Portrait-Artist-Young-Thrift-Editions/dp/0486280500',
+                    },
+                    {
+                        title: 'A Portrait of an Artist as a Young Man',
+                        author: 'James Joyce',
+                        publishedDate: 1916,
+                        url: 'https://www.amazon.com/Portrait-Artist-Young-Thrift-Editions/dp/0486280500',
+                    },
+                    {
+                        title: 'A Portrait of an Artist as a Young Man',
+                        author: 'James Joyce',
+                        publishedDate: 1916,
+                        url: 'https://www.amazon.com/Portrait-Artist-Young-Thrift-Editions/dp/0486280500',
+                    },
+                    {
+                        title: 'A Portrait of an Artist as a Young Man',
+                        author: 'James Joyce',
+                        publishedDate: 1916,
+                        url: 'https://www.amazon.com/Portrait-Artist-Young-Thrift-Editions/dp/0486280500',
+                    },
+                ],
+                methods: {
+                    sortTable: function sortTable(title) {
+                        this.books.sort(function (a, b) {
+                            if (a[books.title] > b[books.title]) {
+                                return 1;
+                            } else if (a[books.title] < b[books.title]) {
+                                return -1;
+                            }
+                        })
+                    }
+                },
+            }
+        })
+    </script>
+</body>
+
+</html>
